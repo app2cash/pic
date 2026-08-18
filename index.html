@@ -1,0 +1,986 @@
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Марат Ярков - Ведущий свадеб, юбилеев, корпоративов</title>
+    <meta name="description" content="Профессиональный ведущий мероприятий. Свадьбы, юбилеи, корпоративы, вечеринки. Телеведущий, режиссёр, ex-актёр. Создаю атмосферу, которую помнят годами.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8B5CF6;
+            --primary-dark: #7C3AED;
+            --primary-light: #A78BFA;
+            --secondary: #EC4899;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+            --bg-white: #FFFFFF;
+            --border: #E5E7EB;
+            --success: #10B981;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* ========== HEADER & NAV ========== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(139, 92, 246, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+            .cta-button {
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            margin-top: 70px;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .service-quote {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .service-bullets {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-bullets li {
+            padding: 0.4rem 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .service-bullets li::before {
+            content: '✓ ';
+            color: var(--success);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .service-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .service-link:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .about-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            background: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about-image {
+                height: 300px;
+            }
+            .about-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ========== TESTIMONIALS SECTION ========== */
+        .testimonials {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .stars {
+            color: #FCD34D;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* ========== CONTACT FORM ========== */
+        .contact {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .contact-method {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-method-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-method a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: white;
+            color: var(--primary);
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* ========== SCROLL ANIMATIONS ========== */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .scroll-animate.visible {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* ========== UTILITY ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: 2rem;
+        }
+
+        /* ========== MOBILE MENU ========== */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+            }
+
+            .nav-menu.active {
+                max-height: 400px;
+            }
+
+            .nav-menu li {
+                border-bottom: 1px solid var(--border);
+                padding: 1rem 2rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+    <header>
+        <nav>
+            <div class="logo">МАРАТ ЯРКОВ</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#testimonials">Отзывы</a></li>
+                <li><a href="#contact" class="cta-button">Написать</a></li>
+            </ul>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <h1>Ведущий, который создаёт вайб</h1>
+            <p class="hero-subtitle">
+                Свадьба, юбилей, корпоратив или частное мероприятие — я делаю так, чтобы это было ваше, живое и запоминающееся на годы
+            </p>
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="scrollToContact()">Забронировать</button>
+                <button class="btn-secondary" onclick="scrollToServices()">Узнать больше</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section class="services" id="services">
+        <h2 class="section-title">Что я делаю</h2>
+        <p class="section-subtitle">Четыре формата мероприятий, под каждое — свой подход</p>
+        
+        <div class="services-grid">
+            <!-- СВАДЬБА -->
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <span class="service-icon">💍</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Свадьба</h3>
+                    <p class="service-quote">"Чтобы свадьба была не «ну, норм», а прям вайб"</p>
+                    <ul class="service-bullets">
+                        <li>Без пошлых конкурсов</li>
+                        <li>Ваша история, не шаблон</li>
+                        <li>Вы — гости, а не режиссёры</li>
+                        <li>Атмосфера, которую помнят</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Узнать стоимость →</a>
+                </div>
+            </div>
+
+            <!-- ЮБИЛЕЙ -->
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <span class="service-icon">🎂</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Юбилей</h3>
+                    <p class="service-quote">"Вечер, после которого виновник плачет от счастья"</p>
+                    <ul class="service-bullets">
+                        <li>Интеллигентный юмор</li>
+                        <li>Тепло и достоинство</li>
+                        <li>Все поколения вместе</li>
+                        <li>Трогательные моменты</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Узнать стоимость →</a>
+                </div>
+            </div>
+
+            <!-- КОРПОРАТИВ -->
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <span class="service-icon">🎯</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Корпоратив</h3>
+                    <p class="service-quote">"После которого обсуждают, когда следующий"</p>
+                    <ul class="service-bullets">
+                        <li>Деловой этикет</li>
+                        <li>Без репутационных рисков</li>
+                        <li>Сплочение команды</li>
+                        <li>Уместный юмор</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Узнать стоимость →</a>
+                </div>
+            </div>
+
+            <!-- ДРУГОЕ -->
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <span class="service-icon">🎪</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Другие события</h3>
+                    <p class="service-quote">"День рождения, выпускной, встреча друзей"</p>
+                    <ul class="service-bullets">
+                        <li>Любой формат, любой повод</li>
+                        <li>Без шаблонов</li>
+                        <li>Под вашу историю</li>
+                        <li>От детей до пенсионеров</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Узнать стоимость →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <span style="font-size: 4rem;">🎬</span>
+            </div>
+            <div class="about-content">
+                <h2>Кто я и почему мне стоит доверить ваш праздник</h2>
+                <p>
+                    Я — режиссёр и телеведущий (ТНТ Златоуст, телеканал «Домашний»). Для меня тайминг и фабула вечера — не абстракция, а профессия.
+                </p>
+                <p>
+                    Играл в петербургском театре, работал в клубах как MC, занимался стендапом — от всего этого остались контент, эмоции и умение держать зал без пошлости и криков.
+                </p>
+                <p>
+                    Важно: я не пью, не курю, без семейных якорей. Это значит, что я могу прилететь на вашу свадьбу в любую точку мира, готов к любым внеплановым ситуациям, 100% появлюсь в назначенный час.
+                </p>
+                <div class="about-badges">
+                    <div class="badge">🎤 Режиссёр</div>
+                    <div class="badge">📺 Телеведущий</div>
+                    <div class="badge">🎭 Актёр</div>
+                    <div class="badge">✈️ Мобильность</div>
+                    <div class="badge">🎬 Опыт 10+ лет</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Что говорят те, кто уже был</h2>
+        <p class="section-subtitle">Реальные отзывы от реальных людей</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card scroll-animate">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Марат — ведущий для тех, кто не хочет ужасных шаблонных конкурсов. Огромное спасибо за чудесный праздник! Он получился таким, каким мы себе его представляли"
+                </p>
+                <p class="testimonial-author">Ксения Масленникова</p>
+                <p class="testimonial-role">Невеста</p>
+            </div>
+
+            <div class="testimonial-card scroll-animate">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Искала добродушного и весёлого ведущего и не прогадала! Марат покорил всех наших гостей, многие даже фотографировались с ним на память"
+                </p>
+                <p class="testimonial-author">Алина Шмырова</p>
+                <p class="testimonial-role">Невеста</p>
+            </div>
+
+            <div class="testimonial-card scroll-animate">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Марат оказался виртуозом своего дела и сумел всю компанию сплотить в одно целое, найдя подход к каждому гостю"
+                </p>
+                <p class="testimonial-author">Алла Семёнова</p>
+                <p class="testimonial-role">Именинница (юбилей)</p>
+            </div>
+
+            <div class="testimonial-card scroll-animate">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Если бы можно было купить настроение, я бы выбрал Марата! Потрясающий голос, внимание к деталям, истинный психолог"
+                </p>
+                <p class="testimonial-author">Дарина Фирсова</p>
+                <p class="testimonial-role">Гость праздника</p>
+            </div>
+
+            <div class="testimonial-card scroll-animate">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Работала вместе с Маратом как организатор праздника. Очень довольна! Творческий, деловой подход, оперативен, строго соблюдает пожелания клиента"
+                </p>
+                <p class="testimonial-author">Анастасия Ни (Синицына)</p>
+                <p class="testimonial-role">Организатор мероприятий</p>
+            </div>
+
+            <div class="testimonial-card scroll-animate">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Марат, ваше проведение привело всех гостей в восторг! Потрясающий голос, все друзья от вас без ума. Будем рекомендовать всем!"
+                </p>
+                <p class="testimonial-author">Дарина Фирсова</p>
+                <p class="testimonial-role">Организатор вечера</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="contact" id="contact">
+        <h2>Готовы к волшебному вечеру?</h2>
+        <p>Напишите мне о вашем мероприятии — расскажу о формате, дате, цене и покажу видео со свадеб</p>
+
+        <div class="contact-methods">
+            <div class="contact-method">
+                <div class="contact-method-icon">📱</div>
+                <div class="contact-method-title">WhatsApp</div>
+                <a href="https://wa.me/79058340188">+7 905 834 01 88</a>
+            </div>
+            <div class="contact-method">
+                <div class="contact-method-icon">📲</div>
+                <div class="contact-method-title">Telegram</div>
+                <a href="https://t.me/tamada1rf">@tamada1rf</a>
+            </div>
+            <div class="contact-method">
+                <div class="contact-method-icon">👥</div>
+                <div class="contact-method-title">ВКонтакте</div>
+                <a href="https://vk.ru/maratyarkov">vk.ru/maratyarkov</a>
+            </div>
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.9;">
+            ✨ Всем, кто напишет — дарю книгу «Как говорить на людях» бесплатно
+        </p>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>&copy; 2024 Марат Ярков. Все права защищены. | Ведущий свадеб, юбилеев, корпоративов и мероприятий</p>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // Smooth scroll
+        function scrollToServices() {
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth navbar hide on scroll
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.07)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // Form handling (optional - you can add Formspree or similar service)
+        const form = document.querySelector('.contact-form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Here you can add form submission logic
+                alert('Спасибо! Мы свяжемся с вами в ближайшее время');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>
